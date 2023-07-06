@@ -7,4 +7,5 @@ fs.mkdir(
 
 function dirCreated() {
   console.log("ordner erstellt");
+  fs.rename("");
 }
