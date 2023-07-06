@@ -1,11 +1,6 @@
-import { arrayCars } from "./data.js";
-import { arrayNumbers } from "./data.js";
-
-function sortCars() {
+export const sortCars = (arrayCars) => {
   console.log(arrayCars.sort());
-}
-function sortNumbers() {
+};
+export const sortNumbers = (arrayNumbers) => {
   console.log(arrayNumbers.sort());
-}
-
-export { sortCars, sortNumbers };
+};

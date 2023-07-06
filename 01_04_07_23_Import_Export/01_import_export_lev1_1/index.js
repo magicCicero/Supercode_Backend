@@ -1,5 +1,4 @@
-import { sortCars } from "./function.js";
-import { sortNumbers } from "./function.js";
-
-sortCars();
-sortNumbers();
+import { sortCars, sortNumbers } from "./function.js";
+import { arrayCars, arrayNumbers } from "./data.js";
+sortCars(arrayCars);
+sortNumbers(arrayNumbers);
