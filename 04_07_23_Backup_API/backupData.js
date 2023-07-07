@@ -72,7 +72,7 @@ const createBackup = async () => {
   console.log("CommentsFile Created");
   // Nun werden die Daten aus der Variable nochmal durch eine Schleife geschoben, die erstmal zu jedem Post ein leeres comment Array initialisiert. Mithilfe der Filterfunktion wird nun die PostID aus der Comments.json und Posts.json verglichen und bei Übereinstimmung im leeren Array comments alle Kommentare hinzugefügt.
   fetchedPosts.forEach((post) => {
-    post.comments = []; // Hier wird comments als leeres Array initialisiert
+    post.comments = []; // Hier wird die Property comments des post Objekts als leeres Array initialisert und erstellt, damit im Anschluss die Comments hinzugefügt werden
     post.comments = fetchedComments.filter(
       (comment) => comment.postId === post.id
     );
