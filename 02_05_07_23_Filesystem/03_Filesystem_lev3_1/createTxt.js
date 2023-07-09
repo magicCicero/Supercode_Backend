@@ -4,25 +4,18 @@ const dataTxt = new URL("./data/data.txt", import.meta.url);
 const content = "Hello World";
 
 const readDirectory = async () => {
-  if (fs.existsSync(dataURL)) {
-    console.log("Directory exists");
-    createTxtFile();
-  } else {
-    fs.mkdirSync(dataURL, { recursive: true });
-    console.log("Directory does not exists. Creating directory");
-    createTxtFile();
-  }
-};
-
-const createTxtFile = async () => {
-  if (fs.existsSync(dataTxt)) {
+  try {
+    await fs.promises.access(dataURL, fs.constants.R_OK);
+    console.log(" Directory exists");
+    await fs.promises.access(dataTxt);
     console.log("TxtFile exists");
-  } else {
+  } catch (err) {
+    console.log("Directory does not exists. Creating directory and txtFile");
+    fs.mkdirSync(dataURL, { recursive: true });
     fs.writeFile(dataTxt, content, function (err) {
       if (err) throw err;
       console.log("TxtFile created");
     });
-    console.log("TxtFile does not exists. Creating TxtFile");
   }
 };
 
