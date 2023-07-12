@@ -12,6 +12,18 @@
     "Email": "hans.schmidt@example.com"
   },
   {
+    "id": 4,
+    "Name": "Maria Müller",
+    "Telefonnummer": "+49 111111111",
+    "Email": "maria.mueller@example.com"
+  },
+  {
+    "id": 5,
+    "Name": "Peter Meier",
+    "Telefonnummer": "+49 999999999",
+    "Email": "peter.meier@example.com"
+  },
+  {
     "id": 11,
     "Name": "Max Mustermann",
     "Telefonnummer": "+49 123456789",
