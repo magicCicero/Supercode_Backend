@@ -5,7 +5,7 @@ import {
   updateToDo,
   readToDos,
   getOneToDo,
-} from "./todo.js";
+} from "./services/todo.js";
 
 const app = express();
 const PORT = 9898;
