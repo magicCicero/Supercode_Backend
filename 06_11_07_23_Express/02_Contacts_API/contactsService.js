@@ -43,3 +43,14 @@ export const deletingContacts = async (deleteContact) => {
   );
   return contacts;
 };
+
+export const updateContacts = async (updateContact) => {
+  let contacts = JSON.parse(
+    await fs.promises.readFile(contactURL, { encoding: "utf-8" })
+  );
+  await fs.promises.writeFile(
+    contactURL,
+    JSON.stringify(updateContact, null, 2)
+  );
+  return contacts;
+};

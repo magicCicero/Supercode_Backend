@@ -4,6 +4,7 @@ import {
   writingContacts,
   readingContacts,
   deletingContacts,
+  updateContacts,
 } from "./contactsService.js";
 
 const app = express();
@@ -54,6 +55,14 @@ app.delete("/contacts/:id", async (req, res) => {
   let deleteContact = contacts.filter((contact) => contact.id !== id);
   await deletingContacts(deleteContact);
   res.status(200).send("Kontakt gelöscht");
+});
+
+app.put("/contacts/:id", async (req, res) => {
+  const id = Number(req.params.id);
+  let contacts = await readingContacts();
+  let updateContact = contacts.filter((contact) => contact.id === id);
+  await updateContacts(updateContact);
+  res.status(200).send("Kontakt aktualisiert");
 });
 
 app.listen(PORT, () => {
