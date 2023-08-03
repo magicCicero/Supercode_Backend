@@ -8,8 +8,10 @@
     "dev:server": "npm run dev --prefix backend",
     "dev:vite": "npm run dev --prefix frontend",
     "dev": "concurrently \"npm:dev:*\"",
-    "start": "npm run build --prefix frontend && npm start --prefix backend",
-    "postinstall": "npm i --prefix backend && npm i --prefix frontend"
+    "install:fe": "npm i --prefix frontend",
+    "install:be": "npm i --prefix backend",
+    "installDeps": "concurrently \"npm:install:*\"",
+    "start": "npm run build --prefix frontend && npm start --prefix backend"
   },
   "keywords": [],
   "author": "",
